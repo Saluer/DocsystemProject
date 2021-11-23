@@ -1,0 +1,78 @@
+<form
+  *ngIf="assignment"
+  name="createAssignmentForm"
+  action=""
+  (ngSubmit)="onSubmit()"
+  ngNativeValidate
+>
+  <div class="form-group">
+    <label for="">Предмет</label
+    ><input
+      class="form-control"
+      type="text"
+      name="subject"
+      required
+      minlength="4"
+      [(ngModel)]="assignment.subject"
+    />
+  </div>
+  <div class="form-group">
+    <label for="">Автор (id)</label
+    ><input
+      class="form-control"
+      type="text"
+      name="author"
+      min="1"
+      required
+      [(ngModel)]="assignment.author.id"
+      id=""
+    />
+  </div>
+  <div class="form-group">
+    <label for="">Срок</label
+    ><input
+      class="form-control"
+      type="date"
+      name="deadline"
+      required
+      [(ngModel)]="assignment.deadline"
+      id=""
+    />
+  </div>
+  <div class="form-group">
+    <label for="">Признак контрольности</label
+    ><input
+      class="form-control"
+      type="checkbox"
+      name="controlSign"
+      [(ngModel)]="assignment.controlSign"
+      id=""
+    />
+  </div>
+  <div class="form-group">
+    <label for="">Признак исполнения</label
+    ><input
+      class="form-control"
+      type="checkbox"
+      name="operateSign"
+      [(ngModel)]="assignment.operateSign"
+      id=""
+    />
+  </div>
+  <div class="form-group">
+    <label for="">Текст поручения</label
+    ><input
+      class="form-control"
+      type="text"
+      name="content"
+      required
+      [(ngModel)]="assignment.content"
+      id=""
+    />
+  </div>
+  <input
+    class="form-control btn btn-primary"
+    type="submit"
+    value="Создать поручение"
+  />
+</form>

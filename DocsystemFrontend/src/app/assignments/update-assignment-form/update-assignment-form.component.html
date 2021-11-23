@@ -1,0 +1,72 @@
+<form
+  *ngIf="assignment"
+  name="updateAssignmentForm"
+  action=""
+  (ngSubmit)="onSubmit()"
+  ngNativeValidate
+>
+  <div class="form-group">
+    <label for="">Предмет</label
+    ><input
+      class="form-control"
+      type="text"
+      name="subject"
+      required
+      minlength="4"
+      [(ngModel)]="assignment.subject"
+    />
+  </div>
+  <div class="form-group">
+    <label for="">Автор (id)</label
+    ><input
+      class="form-control"
+      type="text"
+      name="author"
+      required
+      [(ngModel)]="assignment.author.id"
+    />
+  </div>
+  <div class="form-group">
+    <label for="">Срок</label
+    ><input
+      class="form-control"
+      type="date"
+      name="deadline"
+      required
+      [(ngModel)]="assignment.deadline"
+    />
+  </div>
+  <div class="form-group">
+    <label for="">Признак контрольности</label
+    ><input
+      class="form-control"
+      type="checkbox"
+      name="controlSign"
+      [(ngModel)]="assignment.controlSign"
+    />
+  </div>
+  <div class="form-group">
+    <label for="">Признак исполнения</label
+    ><input
+      class="form-control"
+      type="checkbox"
+      name="operateSign"
+      [(ngModel)]="assignment.operateSign"
+    />
+  </div>
+  <div class="form-group">
+    <label for="">Текст поручения</label
+    ><input
+      class="form-control"
+      type="text"
+      name="content"
+      required
+      [(ngModel)]="assignment.content"
+    />
+  </div>
+  <input
+    class="form-control btn btn-primary"
+    type="submit"
+    value="Обновить поручение"
+  />
+</form>

@@ -1,0 +1,27 @@
+<div *ngIf="assignments">
+  <app-context-menu></app-context-menu>
+  <table class="table table-bordered" *ngFor="let assignment of assignments">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Предмет</th>
+        <th>Срок</th>
+        <th>Признак контрольности</th>
+        <th>Признак исполнения</th>
+        <th>Текст</th>
+        <th>ID автора</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{ assignment.id }}</td>
+        <td>{{ assignment.subject }}</td>
+        <td>{{ assignment.deadline | date }}</td>
+        <td>{{ assignment.controlSign }}</td>
+        <td>{{ assignment.operateSign }}</td>
+        <td>{{ assignment.content }}</td>
+        <td>{{ assignment.author.id }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,57 @@
+<h2>Представления</h2>
+<!-- По возможности убрать проверку -->
+
+<aside class="links" *ngIf="organization">
+  <h3>Справочник организации</h3>
+  <h4>Структура организации</h4>
+  <p>
+    <b>Организация: </b>{{ organization.name }} <b>по физ. адресу</b>
+    {{ organization.physAddress }}
+  </p>
+  <ol>
+    <li *ngFor="let department of organization.departments">
+      <ol>
+        <h4>Подразделение:</h4>
+        <b>Название: </b
+        >{{
+          department.name
+        }}
+        <b>Контакты: </b
+        >{{
+          department.contactInfo
+        }}
+        <h4>Сотрудники подзраделения:</h4>
+        <li *ngFor="let employee of department.employees">
+          <b>Имя:</b> {{ employee.firstname }}, <b>фамилия:</b>
+          {{ employee.surname }}
+        </li>
+      </ol>
+    </li>
+  </ol>
+  <a routerLink="/employees"><p>Список сотрудников</p></a>
+  <ol>
+    <li *ngFor="let employee of allEmployees">
+      <a [routerLink]="['/employees', employee.id]">{{ employee.id }}</a>
+    </li>
+  </ol>
+
+  <h3>Поручения</h3>
+  <a routerLink="/assignments"><p>Все поручения</p></a>
+  <ol>
+    <li *ngFor="let assignment of allAssignments">
+      <a [routerLink]="['/assignments', assignment.id]">{{ assignment.id }}</a>
+    </li>
+  </ol>
+  <p>Мои поручения</p>
+  <ol>
+    <li *ngFor="let assignment of assignmentsFromMe">
+      <a [routerLink]="['/assignments', assignment.id]">{{ assignment.id }}</a>
+    </li>
+  </ol>
+  <p>Поручения мне</p>
+  <ol>
+    <li *ngFor="let assignment of assignmentsToMe">
+      <a [routerLink]="['/assignments', assignment.id]">{{ assignment.id }}</a>
+    </li>
+  </ol>
+</aside>

@@ -1,0 +1,11 @@
+<div>
+  <a routerLink="/assignments/create" class="btn btn-block btn-primary"
+    >Создать поручение</a
+  >
+  <a *ngIf="id" routerLink="update" class="btn btn-block btn-primary"
+    >Редактировать поручение</a
+  >
+  <a *ngIf="id" (click)="deleteHandler()" class="btn btn-block btn-primary"
+    >Удалить поручение</a
+  >
+</div>
